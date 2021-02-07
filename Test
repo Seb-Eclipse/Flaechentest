@@ -1,0 +1,151 @@
+package Testpackage;
+
+import java.util.Scanner;
+
+public class Flächentest {
+
+	public static void main(String[] args) {
+		int typ = 0;
+		String typString = "";
+		String formauswahl = "";
+		double ergebnis = 0;
+
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Flaechen-Rechner");
+		System.out.println("-------------");
+		System.out.println("AUSWAHL");
+		System.out.println("Kreis = 1");
+		System.out.println("Raute = 2");
+		System.out.println("Rechteck = 3");
+		System.out.println("Sechseck = 4");
+		System.out.println("-------------");
+		typString = sc.nextLine();
+		
+		try {
+			typ = Integer.parseInt(typString);
+		} catch (NumberFormatException e) {
+			System.err.println(e.toString());
+		}
+		
+// Schleife für die Auswahl und die Eingabe... 0 Soll einen fehlerhafte Eingabe ausgeben
+/*
+ * 	
+ */
+
+		switch (typ) {
+
+		case 1:
+			//Kreis
+			ergebnis = kreis(sc);
+			formauswahl = "Kreis";
+			break;
+
+		case 2:
+			//Raute
+			ergebnis = raute(sc);
+			formauswahl = "Raute";
+			break;
+
+		case 3:
+			//Rechteck
+			ergebnis = rechteck(sc);
+			formauswahl = "Rechteck";
+			break;
+
+		case 4:
+			//Sechseck
+			ergebnis = sechseck(sc);
+			formauswahl = "Sechseck";
+			break;
+
+		default:
+			typString = "ungültig";
+			break;
+		}
+		System.out.println("-------------");
+		System.out.println("Der Flächeninhalt " + formauswahl + " beträgt " + ergebnis + " Einheiten." );
+	}
+
+	/**
+	 * 
+	 * @param sc
+	 * @return
+	 */
+	
+	public static double kreis(Scanner sc) {
+
+		System.out.println("Kreis-Rechner");
+		System.out.println("-------------");
+
+		System.out.print("Bitte Radius eingeben: ");
+		double radius = sc.nextDouble();
+
+		double area = radius * radius * Math.PI;
+
+		System.out.println("Fläche = " + area);
+
+		sc.close();
+
+		return area;
+
+	}
+
+	public static double raute(Scanner sc) {
+
+		System.out.println("Raute-Rechner");
+		System.out.println("----------------");
+
+		System.out.print("Seitenlänge A: ");
+		double width = sc.nextDouble();
+
+		System.out.print("Wert ha: ");
+		double height = sc.nextDouble();
+
+		double area = width * height;
+
+		System.out.println("Fläche = " + area);
+
+		sc.close();
+
+		return area;
+
+	}
+
+	public static double rechteck(Scanner sc) {
+
+		System.out.println("Rechteck-Rechner");
+		System.out.println("----------------");
+
+		System.out.print("Seitenlänge A: ");
+		double width = sc.nextDouble();
+
+		System.out.print("Seitenlänge B: ");
+		double height = sc.nextDouble();
+
+		double area = width * height;
+
+		System.out.println("Fläche = " + area);
+
+		sc.close();
+
+		return area;
+	}
+
+	public static double sechseck(Scanner sc) {
+
+		System.out.println("Sechseck-Rechner");
+		System.out.println("----------------");
+
+		System.out.print("Seitenlänge A: ");
+		double a = sc.nextDouble();
+
+		double area = 3 / 2 * Math.pow(a, a) * Math.sqrt(3);
+
+		System.out.println("Fläche = " + area);
+
+		sc.close();
+
+		return area;
+	}
+
+}
