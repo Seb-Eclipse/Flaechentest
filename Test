@@ -27,7 +27,7 @@ public class Flächentest {
 			System.err.println(e.toString());
 		}
 		
-// Schleife für die Auswahl und die Eingabe... 0 Soll einen fehlerhafte Eingabe ausgeben
+// Schleife für die Auswahl und die Eingabe ... 0 Soll einen fehlerhafte Eingabe ausgeben.
 /*
  * 	
  */
